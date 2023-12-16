@@ -12,34 +12,34 @@ from sklearn.metrics import mean_squared_error, r2_score
 # Load the data
 consolidated_data = pd.read_csv("consolidated_data.csv")
 
-# # Display the top 10 satisfied customers
-# st.subheader("Top 10 Satisfied Customers")
-# st.table(consolidated_data[['MSISDN/Number', 'satisfaction_score']].sort_values(by='satisfaction_score', ascending=False).head(10))
+# Display the top 10 satisfied customers
+st.subheader("Top 10 Satisfied Customers")
+st.table(consolidated_data[['MSISDN/Number', 'satisfaction_score']].sort_values(by='satisfaction_score', ascending=False).head(10))
 
-# # Visualize predicted vs. actual values
-# st.subheader("Actual vs. Predicted Satisfaction Score")
-# fig, ax = plt.subplots()
-# ax.scatter(consolidated_data['satisfaction_score'], consolidated_data['predicted_satisfaction_score'])
-# ax.set_xlabel('Actual Satisfaction Score')
-# ax.set_ylabel('Predicted Satisfaction Score')
-# st.pyplot(fig)
+# Visualize predicted vs. actual values
+st.subheader("Actual vs. Predicted Satisfaction Score")
+fig, ax = plt.subplots()
+ax.scatter(consolidated_data['satisfaction_score'], consolidated_data['predicted_satisfaction_score'])
+ax.set_xlabel('Actual Satisfaction Score')
+ax.set_ylabel('Predicted Satisfaction Score')
+st.pyplot(fig)
 
-# # Pie chart: Percentage Distribution of Satisfaction Levels
-# st.subheader("Percentage Distribution of Satisfaction Levels")
-# satisfaction_counts = consolidated_data['Satisfaction Level'].value_counts()
-# fig_pie = px.pie(satisfaction_counts, names=satisfaction_counts.index, values=satisfaction_counts.values)
-# st.plotly_chart(fig_pie)
+# Pie chart: Percentage Distribution of Satisfaction Levels
+st.subheader("Percentage Distribution of Satisfaction Levels")
+satisfaction_counts = consolidated_data['Satisfaction Level'].value_counts()
+fig_pie = px.pie(satisfaction_counts, names=satisfaction_counts.index, values=satisfaction_counts.values)
+st.plotly_chart(fig_pie)
 
-# # Scatter plots using Plotly Express
-# fig1 = px.scatter(consolidated_data, x='satisfaction_score', y='Engagement Score', title='Satisfaction Score vs Engagement Score')
-# fig2 = px.scatter(consolidated_data, x='satisfaction_score', y='experience_score', title='Satisfaction Score vs Experience Score')
-# fig3 = px.scatter(consolidated_data, x='Engagement Score', y='experience_score', title='Engagement Score vs Experience Score')
+# Scatter plots using Plotly Express
+fig1 = px.scatter(consolidated_data, x='satisfaction_score', y='Engagement Score', title='Satisfaction Score vs Engagement Score')
+fig2 = px.scatter(consolidated_data, x='satisfaction_score', y='experience_score', title='Satisfaction Score vs Experience Score')
+fig3 = px.scatter(consolidated_data, x='Engagement Score', y='experience_score', title='Engagement Score vs Experience Score')
 
-# # Show the figures
-# st.subheader("Scatter Plots")
-# st.plotly_chart(fig1)
-# st.plotly_chart(fig2)
-# st.plotly_chart(fig3)
+# Show the figures
+st.subheader("Scatter Plots")
+st.plotly_chart(fig1)
+st.plotly_chart(fig2)
+st.plotly_chart(fig3)
 
 # Header and instructions
 st.title("🌟 Predictive Model for Satisfaction Score 🌟")
