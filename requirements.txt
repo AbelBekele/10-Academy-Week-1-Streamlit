@@ -1,14 +1,7 @@
 matplotlib
-nltk
 pandas
-pick
-seaborn
-argparse
 poetry
-pytest
 scikit-learn
 sqlalchemy
-psycopg2
-python-dotenv
 streamlit
 plotly
